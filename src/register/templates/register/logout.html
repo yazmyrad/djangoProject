@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}Create an Account{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block logout %}
+<section class="vh-100 gradient-custom">
+    <div class="main" class="form-group">
+        <button id="logout_button" type="button" class="btn btn-success">Logout</button>
+        <script type="text/javascript">
+            document.getElementById("logout_button").onclick = function () {
+                location.href = "logout/";
+            };
+        </script>
+    </div>
+</section>
+{% endblock %}

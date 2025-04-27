@@ -1,0 +1,65 @@
+{% extends "study/index.html" %}
+{% load static %}
+
+{%block menu%} 
+<div id="navbar">
+    <menu>
+        <li id="motto">
+            <h1 style="color:black;  -webkit-text-stroke: 0.2px black; font-family: Playwrite VN; font-size: 24px;">
+                I learned today!
+            </h1>
+        </li>
+        <li>
+        <a href=".">
+            <ion-icon name="search-outline"></ion-icon>
+        </a>
+        </li>
+        <li>
+            <a href="{% url 'blog_creation' %}"  style="cursor: pointer;">
+                <ion-icon name="create-outline"></ion-icon>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}"  style="cursor: pointer;">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </li>
+        <ul>
+            <li>
+                <a href="{% url 'register:profile' username=user.username %}">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <li>
+            <a onclick="changecolor(event)" style="cursor: pointer;">
+                <ion-icon name="contrast-outline"></ion-icon>
+            </a>
+        </li>
+    </menu>
+</div>
+{%endblock%}
+
+{% block card %}
+<div class="card_columns">
+{% for blog in blogs %}
+    <div class="card">
+        <div class="card-img-holder">
+            <img src="{% static 'study/media/love.jpg'%}" alt="wedding_ring">
+        </div>
+        <h3 class="blog-title">{{blog.title}}</h3>
+        <span class="blog-time">{{ blog.datepubl|date:"l M j, Y" }}</span>
+        <p class="description" id="short-text">
+            {% autoescape off %}
+            {{blog.content|truncatechars:159}}
+            {%endautoescape%}
+        </p>
+        <div class="options">
+            <a href="{% url 'blog_detail' blog.slug %}" >
+                <button class="btn">Read full</button>
+            </a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

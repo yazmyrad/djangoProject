@@ -1,0 +1,2 @@
+class CreateNewList:
+    pass

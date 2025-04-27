@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile - {{ profile.user.username }}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" src="profilestyle.css">
+</head>
+<body>
+    <div id="img-avatar">
+        {% if profile.avatar %}
+            <img src="{{ profile.avatar.url }}" alt="Profile Picture">
+        {% endif %}
+    </div>
+    <div id="username">
+        <p>{{ profile.user.username }}</p>
+    </div>
+    <div id="biotext">
+        <p><strong>Bio:</strong> {{ profile.bioText }}</p>
+    </div>
+    <div id="email">
+        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    </div>
+    <!--
+    <div id="liked"></div>
+    <div id="shared"></div>
+    <div id="saved"></div>
+-->
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'study/index.html' %}
+
+{%block menu %}
+<div id="navbar">
+    <menu>
+        <li id="motto">
+            <h1 style="color:black;  -webkit-text-stroke: 0.2px black; font-family: Playwrite VN; font-size: 24px;">
+                I learned today!
+            </h1>
+        </li>
+        <li>
+        <a href=".">
+            <ion-icon name="search-outline"></ion-icon>
+        </a>
+        </li>
+        <li>
+            <a href="{% url 'blog_creation' %}"  style="cursor: pointer;">
+                <ion-icon name="create-outline"></ion-icon>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}"  style="cursor: pointer;">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </a>
+        </li>
+        
+        <li>
+            <a onclick="changecolor(event)" style="cursor: pointer;">
+                <ion-icon name="contrast-outline"></ion-icon>
+            </a>
+        </li>
+    </menu>
+</div>
+
+{% endblock%}
+

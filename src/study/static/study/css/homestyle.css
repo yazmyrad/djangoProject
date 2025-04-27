@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+VN:wght@100..400&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+}
+
+*, *:after, *:before{
+  box-sizing: border-box;
+}
+
+html{
+  position: relative;
+  overflow: auto;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size:15px
+    }
+}
+
+@media screen and (max-width: 465px) {
+    html {
+        font-size:14px
+    }
+}
+
+body{
+    padding-top: 100px;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    color:black;
+    overflow-x: hidden; /* Prevent horizontal scrolling caused by minor shifts */
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.card_columns{
+    margin-top: 14vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: calc(3 * 25rem + 2 * 20px);
+    max-width: 90%; 
+    gap: 20px;
+    padding: 20px;
+}
+
+.card{
+    width: calc(100% - 20px);
+    max-width: 25rem;
+    height: auto;
+    background: #fff;
+    border:1px solid black;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    display:flex;
+}
+
+.card-img-holder{
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex:1;
+}
+
+.card-img-holder img{
+  width: 100%;
+  height: auto;
+  max-height: 15rem;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.blog-title{
+  color: #22215B;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  flex:1;
+}
+
+.description{ 
+  padding: 1rem 0;
+  font-size: 1rem;
+  flex:2;
+}
+
+.blog-time{
+  font-size: .8rem;
+  flex:1;
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  flex:1;
+}
+
+.btn{
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  font-weight: 400;
+  background: #EEF7FE;
+  color: #22215B;
+  cursor: pointer;
+}
+
+.dark-mode{
+	background-color:#2e2e2e;
+	color:white;
+}
+
+.dark-mode .card {
+  background-color: #3a3a3a; 
+  color: white; 
+  border-color: #555; 
+}
+
+.dark-mode .blog-title, .blog-time{
+  color:white;
+}
+
+#navbar {
+  background-color: #e3f2fd;
+  position: fixed;
+  display: flex;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 2vh;
+  width: 70%;
+  height: 8vh;
+  border-radius:5cm;
+  transition: top 0.3s;
+  z-index: 1000;
+}
+
+#navbar menu {
+  display: flex;
+  width: 100%; 
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
